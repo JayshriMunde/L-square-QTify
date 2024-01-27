@@ -9,10 +9,12 @@
 }
 
 .logo {
+  position: relative;
   width: 67px;
   height: 34px;
   margin-left: 32px;
   margin-top: 11px;
+  left: 5px;
 }
 
 .feedback {
