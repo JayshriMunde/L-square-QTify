@@ -7,11 +7,11 @@ import "./SearchAlbum.css";
 
 const Navbar = () => {
   return (
-    <div className="navbar">
+    <nav className="navbar">
       <Logo />
       <SearchAlbum />
       <Feedbackfrom />
-    </div>
+    </nav>
   );
 };
 

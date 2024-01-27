@@ -13,15 +13,17 @@
 
 input {
   padding-right: 20px; /* Make space for the icon and adjust as needed */
-  border: 1px solid #ccc; /* Add a border to the input field */
+  border: 1px solid #921717; /* Add a border to the input field */
   border-radius: 5px; /* Optional: Add border radius for a rounded look */
-  height: 30px;
-  width: 300px;
+  width: 568px;
+  height: 48px;
 }
 
 .search-icon {
   position: absolute;
-  right: 10px; /* Adjust the icon position */
-  color: #100505d8; /* Adjust the icon color */
-  cursor: pointer;
+  right: 10px; /* Adjust the left position of the icon */
+  top: 50%; /* Center the icon vertically */
+  transform: translateY(-50%); /* Center the icon vertically */
+  width: 20px; /* Adjust the width of the icon */
+  height: 20px; /* Adjust the height of the icon */
 }
