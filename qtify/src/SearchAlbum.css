@@ -18,7 +18,12 @@ input {
   height: 30px;
   width: 300px;
 }
-
+.divider {
+  height: 30px; /* Adjust the height of the divider */
+  width: 1px; /* Adjust the width of the divider */
+  background-color: #151313; /* Adjust the color of the divider */
+  margin: 0 10px; /* Adjust the margin for spacing */
+}
 .search-icon {
   position: absolute;
   right: 10px; /* Adjust the icon position */
