@@ -9,16 +9,17 @@
 }
 
 .logo {
-  position: relative;
   width: 67px;
   height: 34px;
-  left: 32px;
+  margin-left: 32px;
+  margin-top: 11px;
 }
 
 .feedback {
   background-color: black;
+  position: relative;
+  margin-right: 32px;
   color: #20cd4e;
-  right: 32px;
   position: relative;
   font-family: Poppins;
   padding: 10px 15px;
