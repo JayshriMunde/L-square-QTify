@@ -1,0 +1,28 @@
+/* Navbar.css */
+
+.navbar {
+  background-color: #20cd4e;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo img {
+  max-height: 50px;
+  display: block;
+}
+
+.feedback {
+  background-color: black;
+  color: #20cd4e;
+  padding: 10px 15px;
+  cursor: pointer;
+  font-size: 14px;
+  border-radius: 10px;
+  transition: background-color 0.3s; /* Optional: Add a smooth transition effect */
+}
+
+.feedback:hover {
+  background-color: #000; /* Change background color on hover */
+}
