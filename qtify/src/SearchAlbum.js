@@ -7,7 +7,6 @@ function SearchAlbum() {
     <div className="search-container">
       <div className="search-input">
         <input type="text" placeholder="Search a song of your choice" />
-
         <img
           src="assests/search icon.png"
           alt="Figma Icon"

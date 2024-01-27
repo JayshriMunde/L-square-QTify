@@ -16,6 +16,7 @@
 .feedback {
   background-color: black;
   color: #20cd4e;
+  font-family: Arial, Helvetica, sans-serif;
   padding: 10px 15px;
   cursor: pointer;
   font-size: 14px;
