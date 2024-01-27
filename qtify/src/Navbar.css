@@ -9,6 +9,7 @@
 }
 
 .logo {
+  margin: 10px;
   width: 67px;
   height: 34px;
   top: 20px;
@@ -18,6 +19,7 @@
 .feedback {
   background-color: black;
   color: #20cd4e;
+  margin: 10px;
   font-family: Poppins;
   padding: 10px 15px;
   cursor: pointer;
