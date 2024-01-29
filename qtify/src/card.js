@@ -7,7 +7,7 @@ const Card = ({ albumImage, follows, albumName }) => {
       <div className="card">
         <img src={albumImage} alt="Album Cover" className="album-image" />
         <div className="follows">
-          <p className="follower">${follows} Follows </p>
+          <p className="follower">{follows} Follows </p>
         </div>
       </div>
       <div className="info">
