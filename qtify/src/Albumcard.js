@@ -6,22 +6,20 @@ import axios from "axios";
 
 const Albumcard = () => {
   const [topAlbums, setTopAlbums] = useState([]);
+  const fetchTopAlbums = async () => {
+    try {
+      const response = await axios.get(
+        "https://qtify-backend-labs.crio.do/albums/top"
+      );
 
-  useEffect(() => {
-    const fetchTopAlbums = async () => {
-      try {
-        const response = await axios.get(
-          "https://qtify-backend-labs.crio.do/albums/top"
-        );
-
-        if (response.data) {
-          setTopAlbums(response.data);
-        }
-      } catch (error) {
-        console.error("Error fetching top albums:", error.message);
+      if (response.data) {
+        setTopAlbums(response.data);
       }
-    };
-
+    } catch (error) {
+      console.error("Error fetching top albums:", error.message);
+    }
+  };
+  useEffect(() => {
     fetchTopAlbums();
   }, []);
 
