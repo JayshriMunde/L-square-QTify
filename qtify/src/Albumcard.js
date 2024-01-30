@@ -1,73 +1,36 @@
-import React from "react";
-import "./Albumcard.css";
+import React, { useEffect, useState } from "react";
 import Card from "./card";
-import { useEffect, useState } from "react";
-import axios from "axios";
+import Carousel from "./Component/Carousel";
+import "./Albumcard.css";
 
-const Albumcard = () => {
-  const [topAlbums, setTopAlbums] = useState([]);
-  const [newAlbums, setNewAlbums] = useState([]);
-  const fetchTopAlbums = async () => {
-    try {
-      const response = await axios.get(
-        "https://qtify-backend-labs.crio.do/albums/top"
-      );
+const Albumcard = ({ data, title }) => {
+  const [showCarousel, setShowCarousel] = useState(true);
 
-      if (response.data) {
-        setTopAlbums(response.data);
-      }
-    } catch (error) {
-      console.error("Error fetching top albums:", error.message);
-    }
+  const handleCollapseToggle = () => {
+    setShowCarousel(!showCarousel);
   };
-  const fetchNewAlbums = async () => {
-    try {
-      const response = await axios.get(
-        "https://qtify-backend-labs.crio.do/albums/new"
-      );
 
-      if (response.data) {
-        setNewAlbums(response.data);
-      }
-    } catch (error) {
-      console.error("Error fetching top albums:", error.message);
-    }
-  };
-  useEffect(() => {
-    fetchTopAlbums();
-    fetchNewAlbums();
-  }, []);
+  console.log(data);
 
   return (
     <div className="section">
       <div className="header">
-        <h2>Top Albums</h2>
-        <button className="collapse-button">Collapse</button>
+        <h2>{title}</h2>
+        <button className="collapse-button" onClick={handleCollapseToggle}>
+          {showCarousel ? "Show All" : "Collapse"}
+        </button>
       </div>
-      <div className="top-albums-grid">
-        {topAlbums.map((album) => (
-          <Card
-            key={album.id}
-            albumImage={album.image}
-            follows={album.follows}
-            albumName={album.title}
-          />
-        ))}
-      </div>
-      <div className="header">
-        <h2>New Albums</h2>
-        <button className="collapse-button">Collapse</button>
-      </div>
-      <div className="top-albums-grid">
-        {newAlbums.map((album) => (
-          <Card
-            key={album.id}
-            albumImage={album.image}
-            follows={album.follows}
-            albumName={album.title}
-          />
-        ))}
-      </div>
+      {showCarousel ? (
+        <div className="top-albums-carousel">
+          <Carousel items={data} />
+        </div>
+      ) : (
+        <div className="top-albums-grid">
+          {data.map((album) => (
+            <Card data={album} />
+          ))}
+        </div>
+      )}
     </div>
   );
 };

@@ -86,3 +86,11 @@ video {
   font: inherit;
   vertical-align: baseline;
 }
+
+body {
+  font-family: poppins, sans-serif;
+  line-height: 1.5;
+  background-color: #181717;
+  color: #ffffff;
+  overflow-x: hidden;
+}
