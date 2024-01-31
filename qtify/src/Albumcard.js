@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import Card from "./card";
+import Card from "./card.js";
 import Carousel from "./Component/Carousel";
 import "./Albumcard.css";
 
@@ -10,15 +10,13 @@ const Albumcard = ({ data, title }) => {
     setShowCarousel(!showCarousel);
   };
 
-  console.log(data);
-
   return (
     <div className="section">
       <div className="header">
         <h2>{title}</h2>
-        <button className="collapse-button" onClick={handleCollapseToggle}>
+        <h4 className="collapse-button" onClick={handleCollapseToggle}>
           {showCarousel ? "Show All" : "Collapse"}
-        </button>
+        </h4>
       </div>
       {showCarousel ? (
         <div className="top-albums-carousel">
@@ -27,7 +25,7 @@ const Albumcard = ({ data, title }) => {
       ) : (
         <div className="top-albums-grid">
           {data.map((album) => (
-            <Card data={album} />
+            <Card data={album} type="album" />
           ))}
         </div>
       )}

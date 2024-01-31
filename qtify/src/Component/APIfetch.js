@@ -2,25 +2,27 @@ import React from "react";
 import axios from "axios";
 import { useState, useEffect } from "react";
 
-export const fetchTopAlbums = async () => {
-  try {
-    const response = await axios.get(
-      "https://qtify-backend-labs.crio.do/albums/top"
-    );
+const BACKEND_ENDPOINT = "https://qtify-backend-labs.crio.do";
 
-    return response.data;
+export const fetchGenreList = async () => {
+  try {
+    const allObj = {
+      key: "all",
+      label: "All",
+    };
+    const res = await axios.get(`${BACKEND_ENDPOINT}/genres`);
+    const genreData = res.data.data;
+    genreData.unshift(allObj);
+    return genreData;
   } catch (err) {
     console.log(err);
   }
 };
 
-export const fetchNewAlbums = async () => {
+export const fetchSongs = async () => {
   try {
-    const response = await axios.get(
-      "https://qtify-backend-labs.crio.do/albums/top"
-    );
-
-    return response.data;
+    const res = await axios.get(`${BACKEND_ENDPOINT}/songs`);
+    return res.data;
   } catch (err) {
     console.log(err);
   }

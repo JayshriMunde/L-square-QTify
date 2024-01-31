@@ -102,15 +102,11 @@ Card.css .album-container {
 }
 
 .collapse-button {
-  background: rgba(52, 201, 75, 1);
+  color: rgba(52, 201, 75, 1);
   border: none;
   padding: 8px 16px;
   border-radius: 4px;
   cursor: pointer;
-}
-
-.collapse-button:hover {
-  background-color: rgba(52, 201, 75, 1);
 }
 
 .top-albums-grid {
