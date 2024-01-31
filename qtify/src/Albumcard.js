@@ -5,7 +5,6 @@ import "./Albumcard.css";
 
 const Albumcard = ({ data, title }) => {
   const [showCarousel, setShowCarousel] = useState(true);
-  const [dividor, setdividor] = useState("Top Album");
 
   const handleCollapseToggle = () => {
     setShowCarousel(!showCarousel);
