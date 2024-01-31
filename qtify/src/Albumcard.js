@@ -5,6 +5,7 @@ import "./Albumcard.css";
 
 const Albumcard = ({ data, title }) => {
   const [showCarousel, setShowCarousel] = useState(true);
+  const [dividor, setdividor] = useState("Top Album");
 
   const handleCollapseToggle = () => {
     setShowCarousel(!showCarousel);
@@ -23,11 +24,14 @@ const Albumcard = ({ data, title }) => {
           <Carousel items={data} />
         </div>
       ) : (
-        <div className="top-albums-grid">
-          {data.map((album) => (
-            <Card data={album} type="album" />
-          ))}
-        </div>
+        <>
+          <div className="top-albums-grid">
+            {data.map((album) => (
+              <Card data={album} type="album" />
+            ))}
+          </div>
+          {title !== "New Albums" && <hr className="divider" />}
+        </>
       )}
     </div>
   );

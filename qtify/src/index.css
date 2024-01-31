@@ -90,7 +90,7 @@ video {
 body {
   font-family: poppins, sans-serif;
   line-height: 1.5;
-  background-color: #181717;
+  background-color: rgba(18, 18, 18, 1);
   color: #ffffff;
   overflow-x: hidden;
 }
